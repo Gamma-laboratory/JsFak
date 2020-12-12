@@ -6,8 +6,8 @@
  version:1.0
  explain:这是一款用户绕过前端js加密进行密码爆破的工具，你无需在意js加密的细节，只需要输入你想要爆破url，以及username输入框的classname，password输入框的classname，点击登录框classname,爆破用户名，密码字典等就可，暂时不支持带验证码校验的爆破
  ## 例子：
-    只爆破密码：python JsFak.py -u url -user admin -Pd password.txt -cu user_classname -cp pass_classname -l login_classname
-    爆破密码和用户：python main.py -ud username.txt -pd password.txt -cu user_classname -cp user_classname -l user_classname -u url
+    只爆破密码：```python JsFak.py -u url -user admin -Pd password.txt -cu user_classname -cp pass_classname -l login_classname```
+    爆破密码和用户：```python main.py -ud username.txt -pd password.txt -cu user_classname -cp user_classname -l user_classname -u url```
     详情功能参考  -h
     也可以指定输出结果文件：-f
 
@@ -41,3 +41,9 @@ pip install selenium
 ### 3.下载browsermobproxy
 
 源码以及附带了一个browsermobproxy文件，所以就不需要下载，如果需要重新下载，还得修改源码重新指定。
+### 4.安装python -browsermobproxy包
+
+```
+pip install browsermob-proxy
+```
+
