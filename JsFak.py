@@ -6,7 +6,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from browsermobproxy import Server
 from selenium.webdriver.chrome.options import Options
-
+#python JsFak.py -ud username.txt -pd password.txt -cu "input focus" -cp input -l button -u http://119.36.87.251/webAu th/
 class Brower_scan():
     def __init__(self):
         self.response_result = []
@@ -78,7 +78,7 @@ class Brower_scan():
         self.chrome_options.add_argument('--headless')
     def init_chrome(self):
         try:
-            self.chrome = webdriver.Chrome(chrome_options=self.chrome_options)
+            self.chrome = webdriver.Chrome(chrome_options=self.chrome_options,executable_path ='chromedriver.exe')
             self.proxy.new_har("ht_list2", options={'captureContent': True})
             self.chrome.get(self.args.url)
         except Exception as e:
@@ -100,6 +100,7 @@ class Brower_scan():
         result = self.proxy.har
         for entry in result['log']['entries']:
             _url = entry['request']['url']
+            print(_url)
             if "password" in _url and "username" in _url:
                 _response = entry['response']
                 _content = _response['content']
