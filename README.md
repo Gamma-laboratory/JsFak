@@ -48,4 +48,5 @@ pip install selenium
 ```
 pip install browsermob-proxy
 ```
-
+### 无法通过class来查找input标签
+如果通过input没有class属性就必须更换查找的方式了，可以通过id，什么的
